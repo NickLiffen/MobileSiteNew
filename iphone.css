@@ -1,0 +1,228 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background-color: white;
+	color: #222;
+	font-family: Helvetica;
+	font-size: 16px;
+}
+h1{
+	text-align: center;
+}
+h2{
+	text-align: center;
+	font-size: 16px;
+	padding-top: 2px;
+}
+h3{
+	font-size: 16px;
+	padding-top: 2px;
+}
+
+nav {
+	border-width: 1px;
+	border-color: black;
+	text-align: center;
+}
+
+nav ul {
+	background: #fff;
+	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+	padding:  10px;
+	border-radius: 5px;  
+	list-style: none;
+	position: relative;
+	display: inline-table;
+}
+
+nav ul li:hover {
+	font-weight:bold;
+}
+nav ul li:hover a {
+	color: black;
+}
+nav ul li {
+	float: left;
+}
+nav ul li a {
+	display: block; padding: 5px 8px;
+	color: #757575; text-decoration: none;
+}
+.box{
+	width: 100%;
+	margin: 0 auto;
+	background-color: #eee;
+
+}
+.move{
+	padding-left: 5px;
+}
+.top{
+	padding-top: 20px;
+	font-style: italic; 
+	font-weight: bold;
+}
+.paddingTop{
+	padding-top: 10px;
+}
+footer
+{
+
+	text-align: center;
+	width: 100%;
+	bottom: 0;
+	background: #eee;
+	border-top: solid;
+	border-width: 1px;
+	padding-top: 10px;
+	position: absolute;
+	padding-bottom: 5px;
+	
+}
+.taskInfo{
+	padding-top: 10px;
+	padding-left: 10px;
+}
+.bold{
+	font-weight: bold;
+}
+.center{
+	text-align: center;
+	padding-top: 10px;
+}.red{
+	color: red;
+}
+.paddingBottomTop{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+
+input[type='checkbox']:checked {
+    background: #abd;
+}
+
+
+/***FIRST STYLE THE BUTTON***/
+.gobutton{
+
+cursor: pointer; /*forces the cursor to change to a hand when the button is hovered*/
+background-color: white;
+padding: 5px 5px; /*add some padding to the inside of the button*/
+border: 1px solid #abd; /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+/*give the button a drop shadow*/
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+font-size:16px;
+
+}
+/***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
+.gobutton:hover, .gobutton:focus{
+
+/*reduce the drop shadow size to give a pushed button effect*/
+-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+box-shadow: 0 0 1px rgba(0,0,0, .75);
+
+}
+
+
+.gobuttonOne{
+
+cursor: pointer; /*forces the cursor to change to a hand when the button is hovered*/
+background-color: white;
+padding: 1px 1px; /*add some padding to the inside of the button*/
+border: 1px solid #abd; /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+/*give the button a drop shadow*/
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+font-size:14px;
+
+}
+/***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
+.gobuttonOne:hover, .gobuttonOne:focus{
+
+/*reduce the drop shadow size to give a pushed button effect*/
+-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+box-shadow: 0 0 1px rgba(0,0,0, .75);
+
+}
+
+.rating {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
