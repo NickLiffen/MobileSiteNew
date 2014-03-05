@@ -70,6 +70,13 @@ $(document).ready(function() {
     $('#addNo').change(function() {
         $('#addNoDisplay').toggle();
     });
+     $('#mycheckboxYesFinal').change(function() {
+        $('#mycheckboxdivYesFinal').toggle();
+        $('#finalButton').toggle();
+    });
+      $('#mycheckboxNoFinal').change(function() {
+        $('#finalButton').toggle();
+    });
 
 });
 
@@ -475,7 +482,133 @@ function nextPageFour(){
 
 }
 
+function appFourButton(){
 
+	var appFour = _("appFourValidation");
+
+	if(appFour){
+
+		appFour.addEventListener("click", appFourValidationButton);
+	}
+
+}
+
+//This validates the STAR Rating.
+
+appFourValidationButton = function(){
+
+	var starOne = _("star1").checked;
+	var starTwo = _("star2").checked;
+	var starThree = _("star3").checked;
+	var starFour = _("star4").checked;
+	var starFive = _("star5").checked;
+
+	console.log(starOne);
+	console.log(starTwo);
+	console.log(starThree);
+	console.log(starFour);
+	console.log(starFive);
+	var errors = 0;
+
+	if( starOne || starTwo || starThree || starFour || starFive == true){
+		console.log("First one true");
+		
+	}else{
+		_("starOneValidate").innerHTML = "Please press a star";
+		errors = errors + 1;
+	}
+
+	var starOneNext = _("star1One").checked;
+	var starTwoNext = _("star2One").checked;
+	var starThreeNext = _("star3One").checked;
+	var starFourNext = _("star4One").checked;
+	var starFiveNext = _("star5One").checked;
+
+	if( starOneNext || starTwoNext || starThreeNext || starFourNext || starFiveNext == true){
+		console.log("Second one True");
+
+	}else{
+		_("starTwoValidate").innerHTML = "Please press a star";
+		errors = errors + 1;
+	}
+
+	var starOneStar = _("star1Two").checked;
+	var starTwoStar = _("star2Two").checked;
+	var starThreeStar = _("star3Two").checked;
+	var starFourStar = _("star4Two").checked;
+	var starFiveStar = _("star5Two").checked;
+
+	if( starOneStar || starTwoStar || starThreeStar || starFourStar || starFiveStar == true){
+		console.log("Third one True");
+
+	}else{
+		_("starThreeValidate").innerHTML = "Please press a star";
+		errors = errors + 1;
+	}
+
+	if(errors > 0){
+
+		return false;
+
+	}
+	else{
+		nextPageFive()
+	
+	}
+}
+
+function nextPageFive(){
+
+	var url = "appFive.html";
+	window.location.href = url;
+
+}
+
+function appFiveButton(){
+
+		var appFiveValidation = _("appFiveValidation");
+		if(appFiveValidation){
+			appFiveValidation.addEventListener("click", appFiveValidate);
+		}
+
+}
+
+
+appFiveValidate = function(){
+
+
+	var mycheckboxYes = _("mycheckboxYesFinal");
+	var mycheckboxNo = _("mycheckboxNoFinal");
+	errors = 0;
+
+	if(mycheckboxYes && mycheckboxNo == false){
+		_("checkBoxFive").innerHTML = "Please check one";
+		errors = errors + 1;
+	}
+
+	if(errors > 0){
+		return false;
+	}
+	else{
+		var url = "finished.html";
+		window.location.href = url;
+	}
+
+}
+
+function homePage(){
+
+var homePage = _("homePage");
+		if(homePage){
+			homePage.addEventListener("click", function(){
+
+				var url = "index.html";
+				window.location.href = url;
+
+			});
+		}
+
+}
 
 pageLoaded = function(){
 	pageSize();
@@ -489,7 +622,9 @@ pageLoaded = function(){
 	timerTwoStart();
 	timerTwoStop();
 	help();
-
+	appFourButton();
+	appFiveButton();
+	homePage();
 
 }
 

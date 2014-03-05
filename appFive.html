@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Media Query</title>
+    <link rel="stylesheet"  href="iphone.css" type="text/css"   media="only screen and (max-width: 480px)"/>
+    <link rel="stylesheet"  href="screen.css" type="text/css"   media="screen and (min-width: 481px)"/>
+  <meta name="viewport" content="user-scalable=no, width=device-width"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+
+<body>
+<div class="box">
+<article>
+<div class = "paddingBottomTop">
+
+<section class="header"><h1>Mystery Shopper</h1></section>
+<div class="paddingTop"></div>
+            <nav>
+              <ul>
+                <li><a href="#">Home Page</a></li>
+                <li><a href="#">Task Info</a></li>
+                <li><a href="#">Start App</a></li>
+                <li><a href="#">Other</a></li>
+              </ul> 
+            </nav>
+</div>
+</article>
+</div>
+<div class="move">
+
+<h2>Extra Information</h2>
+
+  <div class = "paddingBottomTop"></div>
+<p>Any more information?*</p>
+  <div class = "paddingBottomTop"></div>
+Yes: <input type="checkbox" name="mycheckbox" id="mycheckboxYesFinal" value="0" />
+No:  <input type="checkbox" name="mycheckbox" id="mycheckboxNoFinal" value="0" />
+<span id="checkBoxFive"></span>
+  <div class = "paddingBottomTop"></div>
+<div id="mycheckboxdivNoFinal" style="display:none">
+    <span id="noExtraInformation"></span>
+</div>
+<div id="mycheckboxdivYesFinal" style="display:none">
+<div class="center">
+<textarea rows="15" cols="30" id="textArea" placeholder="Staff Problems, Shop Problems, Positives....">
+</textarea>
+</div>
+</div>
+ <div class = "paddingBottomTop"></div>
+<p>* Remember that you are going to be filling out more information later on when you fill out the desktop app!</p>
+
+
+  <div class="center" id = "finalButton" style="display:none">
+    <input class="gobutton" type="submit" value="Go!" id="appFiveValidation"/>
+  </div>
+
+
+
+
+
+
+
+<script src="javascript.js"></script>
+</div>
+<footer>
+
+    <p>Copyright of Nicholas Liffen</p>
+
+    </footer>
+</body>
+</html>
