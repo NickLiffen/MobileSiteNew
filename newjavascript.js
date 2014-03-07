@@ -1,15 +1,22 @@
+/* This page creates all javascript for my mobile site. I have realised that the
+variables I have assinged everything are really poor and do not make sense to
+someone who would be looking to understand my code. I am looking to improve this
+when I get time!*/
+
+
+//Function used that saves me writing getElementById all the time
 function _(el) {
     return document.getElementById(el);
 }
 
+//Function that prints out the screen size (Testing & Protoyping)
 function pageSize() {
     console.log("Screen Width" + screen.width + ', ' + "Screen Height" + screen.height);
 }
 
 
-
+//Function that enables and button when a checkbox is checked
 enableButton = function () {
-    console.log("READYYYY");
     if (_('option').checked) {
 
         _('b1').disabled = '';
@@ -21,21 +28,22 @@ enableButton = function () {
     }
 }
 
+//Starts an EventListener to a button
 function button() {
-    console.log("hello");
     var option = _("option");
     if (option) {
-        console.log(option);
         option.addEventListener("click", enableButton);
     }
 }
 
+//Function that states the next page location
 buttonChangePage = function () {
 
     var url = "app.html";
     window.location.href = url;
 }
 
+//Starts an EventListener to a button
 function buttonClick() {
     var b1 = _("b1");
     if (b1) {
@@ -43,6 +51,7 @@ function buttonClick() {
     }
 }
 
+//JQUERY - Only used to toggle text boxex whn theres a change on a checkbox
 $(document).ready(function () {
     $('#mycheckboxYes').change(function () {
         $('#mycheckboxdivYes').toggle();
@@ -79,7 +88,7 @@ $(document).ready(function () {
 });
 
 
-
+//Validation for todays time and date and prints out error messages
 validate = function () {
 
     var errors = 0;
@@ -87,7 +96,6 @@ validate = function () {
 
     if (hello === '') {
         _("todayDateValidate").innerHTML = "Please enter a date";
-        console.log(hello);
         errors = errors + 1;
     }
 
@@ -95,7 +103,6 @@ validate = function () {
 
     if (helloNew === '') {
         _("todayTimeValidate").innerHTML = "Please enter a Time";
-        console.log(helloNew);
         errors = errors + 1;
 
     }
@@ -108,6 +115,7 @@ validate = function () {
 
 }
 
+//Function that creates the next page
 function nextPage() {
 
     var url = "appOne.html";
@@ -115,6 +123,7 @@ function nextPage() {
 
 }
 
+//Function that adds an event listner for validation
 function proceed() {
     var procced = _("procced");
     if (procced) {
@@ -124,7 +133,7 @@ function proceed() {
 }
 
 
-
+//Starts the timer for the cue - EVENT LISTENER
 function timerOneStart() {
 
     var startClockOneButton = document.getElementById("start-clock");
@@ -133,6 +142,7 @@ function timerOneStart() {
     }
 }
 
+//Stops te timer for the cue - EVENT LISTENER
 function timerOneStop() {
 
     var stopClockOneButton = document.getElementById("stop-clock");
@@ -141,10 +151,11 @@ function timerOneStop() {
     }
 }
 
-
+//Initlising two variables for the timer
 var clicked = false;
 var sec = 0;
 
+//Function that actually creates the start clock feature for cue
 startClock = function () {
 
     document.getElementById("stop-clock").style.display = 'block';
@@ -156,13 +167,14 @@ startClock = function () {
     } else if (clicked === true) {}
 }
 
+//Increments the time on the stop watch
 function stopWatch() {
     sec++;
     document.getElementById("timer").innerHTML = sec;
 
 }
 
-
+//Funcion that stops the clock for the first timer
 stopClock = function () {
 
     document.getElementById("start-clock-one").style.display = 'block';
@@ -174,7 +186,7 @@ stopClock = function () {
     clicked = false;
 }
 
-
+//Event Listener for second timer
 function timerTwoStart() {
 
     var startClockTwoButton = document.getElementById("start-clock-one");
@@ -183,6 +195,7 @@ function timerTwoStart() {
     }
 }
 
+//Event listener for second timer
 function timerTwoStop() {
 
     var stopClockTwoButton = document.getElementById("stop-clock-one");
@@ -191,9 +204,11 @@ function timerTwoStop() {
     }
 }
 
+//Initilising another two variables but this one is for the second timer
 var clickedOne = false;
 var secOne = 0;
 
+//Starts the second timer
 startClockOne = function () {
 
     document.getElementById("stop-clock-one").style.display = 'block';
@@ -205,11 +220,13 @@ startClockOne = function () {
     } else if (clickedOne === true) {}
 }
 
+//Increments the timer
 function stopWatchOne() {
     secOne++;
     document.getElementById("timer-one").innerHTML = secOne;
 }
 
+//Stops timer two
 stopClockOne = function () {
     window.clearInterval(clockOne);
     secOne = secOne;
@@ -218,7 +235,9 @@ stopClockOne = function () {
 }
 
 
-
+/*THIS DOESN'T WORK - I want this to validate the timer. I want it to check is
+the numbers created by the timer are greater then 0. (This function isn't
+called.)*/
 function appTwoButton(sec, secOne) {
 
     var secNew = sec;
@@ -248,6 +267,8 @@ function appTwoButton(sec, secOne) {
     }
 }
 
+
+//Event listner for a button.
 function help() {
 
     var loadNextPageAppTwo = _("loadNextPageAppTwo");
@@ -257,6 +278,7 @@ function help() {
 
 }
 
+//Fires it off to another page.
 helpTwo = function () {
 
     var url = "appTwo.html";
@@ -264,16 +286,18 @@ helpTwo = function () {
 
 }
 
+//Another event listner but this one is for app Two
 function appTwoButton() {
 
     var appTwoValidation = _("appTwoValidation");
     if (appTwoValidation) {
         appTwoValidation.addEventListener("click", appTwoValidate);
-        console.log(appTwoValidation);
     }
 
 }
 
+/*This validates everything on app Two. Quite a long function - maybe should
+break it down */
 appTwoValidate = function () {
 
     var errors = 0;
@@ -285,7 +309,6 @@ appTwoValidate = function () {
 
     if (checkOne || checkTwo == true) {
 
-        console.log("yes1");
     } else {
         errors = errors + 1;
         _("firstCheckBoxValidate").innerHTML = "One of these must be checked";
@@ -293,7 +316,6 @@ appTwoValidate = function () {
 
 
     if (checkTwo == true && firstCheckBox == "") {
-        console.log(firstCheckBox);
         errors = errors + 1;
         _("firstCheckBoxValidate").innerHTML = "Please fill out the text box";
 
@@ -307,20 +329,17 @@ appTwoValidate = function () {
 
     if (checkThree || checkFour == true) {
 
-        console.log("yes2");
+
     } else {
         errors = errors + 1;
         _("secondCheckBoxValidate").innerHTML = "One of these must be checked";
     }
 
     if (checkFour == true && secondCheckBox == "") {
-        console.log(secondCheckBox);
         errors = errors + 1;
         _("secondCheckBoxValidate").innerHTML = "Please fill out the text box";
 
     }
-
-    console.log(errors);
 
     var checkFive = _("foodCooked").checked;
     var checkSix = _("foodUncooked").checked;
@@ -329,14 +348,12 @@ appTwoValidate = function () {
 
     if (checkFive || checkSix == true) {
 
-        console.log("yes3");
     } else {
         errors = errors + 1;
         _("thirdCheckBoxValidate").innerHTML = "One of these must be checked";
     }
 
     if (checkSix == true && thirdCheckBox == "") {
-        console.log(thirdCheckBox);
         errors = errors + 1;
         _("thirdCheckBoxValidate").innerHTML = "Please fill out the text box";
 
@@ -346,7 +363,6 @@ appTwoValidate = function () {
     var addYesText = _("didntLikeFoodThree").value;
 
     if (addYes == true && addYesText == "") {
-        console.log(addYesText);
         errors = errors + 1;
         _("userInput").innerHTML = "Please fill out the text box";
 
@@ -361,6 +377,7 @@ appTwoValidate = function () {
 
 }
 
+//Another function that fires off to appThree when the page is validated
 function nextPageThree() {
 
     var url = "appThree.html";
@@ -368,6 +385,7 @@ function nextPageThree() {
 
 }
 
+//Event listener for the button on app Three
 function appThreeButton() {
 
     var appThreeValidation = _("appThreeValidation");
@@ -377,6 +395,7 @@ function appThreeButton() {
 
 }
 
+//App Three validation
 appThreeValidate = function () {
 
     var errors = 0;
@@ -395,7 +414,6 @@ appThreeValidate = function () {
 
 
     if (checkTwo == true && firstCheckBox == "") {
-        console.log(firstCheckBox);
         errors = errors + 1;
         _("firstCheckBoxValidate").innerHTML = "Please fill out the text box";
 
@@ -417,7 +435,6 @@ appThreeValidate = function () {
     }
 
     if (checkFour == true && secondCheckBox == "") {
-        console.log(secondCheckBox);
         errors = errors + 1;
         _("secondCheckBoxValidate").innerHTML = "Please fill out the text box";
 
@@ -438,7 +455,6 @@ appThreeValidate = function () {
     }
 
     if (checkSix == true && thirdCheckBox == "") {
-        console.log(thirdCheckBox);
         errors = errors + 1;
         _("thirdCheckBoxValidate").innerHTML = "Please fill out the text box";
 
@@ -448,7 +464,6 @@ appThreeValidate = function () {
     var addYesText = _("didntLikeFoodThree").value;
 
     if (addYes == true && addYesText == "") {
-        console.log(addYesText);
         errors = errors + 1;
         _("userInput").innerHTML = "Please fill out the text box";
 
@@ -463,6 +478,7 @@ appThreeValidate = function () {
 
 }
 
+//This function gets called when appThree is finished validating
 function nextPageFour() {
 
     var url = "appFour.html";
@@ -470,12 +486,11 @@ function nextPageFour() {
 
 }
 
+//Event Listener to start validation on App Four. When the GO button is pressed
 function appFourButton() {
 
     var appFour = _("appFourValidation");
-
     if (appFour) {
-
         appFour.addEventListener("click", appFourValidationButton);
     }
 
@@ -491,15 +506,9 @@ appFourValidationButton = function () {
     var starFour = _("star4").checked;
     var starFive = _("star5").checked;
 
-    console.log(starOne);
-    console.log(starTwo);
-    console.log(starThree);
-    console.log(starFour);
-    console.log(starFive);
     var errors = 0;
 
     if (starOne || starTwo || starThree || starFour || starFive == true) {
-        console.log("First one true");
 
     } else {
         _("starOneValidate").innerHTML = "Please press a star";
@@ -513,7 +522,6 @@ appFourValidationButton = function () {
     var starFiveNext = _("star5One").checked;
 
     if (starOneNext || starTwoNext || starThreeNext || starFourNext || starFiveNext == true) {
-        console.log("Second one True");
 
     } else {
         _("starTwoValidate").innerHTML = "Please press a star";
@@ -527,7 +535,6 @@ appFourValidationButton = function () {
     var starFiveStar = _("star5Two").checked;
 
     if (starOneStar || starTwoStar || starThreeStar || starFourStar || starFiveStar == true) {
-        console.log("Third one True");
 
     } else {
         _("starThreeValidate").innerHTML = "Please press a star";
@@ -544,6 +551,7 @@ appFourValidationButton = function () {
     }
 }
 
+//Function that fires the page off to App Five is everything is validated
 function nextPageFive() {
 
     var url = "appFive.html";
@@ -551,6 +559,7 @@ function nextPageFive() {
 
 }
 
+//Function for the event listener for the button on App Five
 function appFiveButton() {
 
     var appFiveValidation = _("appFiveValidation");
@@ -560,7 +569,7 @@ function appFiveButton() {
 
 }
 
-
+//Short and simple validation for App Five
 appFiveValidate = function () {
 
 
@@ -581,7 +590,7 @@ appFiveValidate = function () {
     }
 
 }
-
+//Event listener for Home Page
 function homePage() {
 
     var homePage = _("homePage");
@@ -596,6 +605,9 @@ function homePage() {
 
 }
 
+/* This is a useful function becuase it means that I can just start all my on
+ load functions in one place rather then doing it all over the page. Makes it
+ easier to read as well*/
 pageLoaded = function () {
     pageSize();
     appTwoButton();
@@ -614,5 +626,5 @@ pageLoaded = function () {
 
 }
 
-
+//This is the main event lisetner that starts everything.
 window.addEventListener("load", pageLoaded);
