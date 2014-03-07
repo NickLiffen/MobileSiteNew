@@ -70,7 +70,6 @@ nav ul li a {
 }
 footer
 {
-
 	text-align: center;
 	width: 100%;
 	bottom: 0;
@@ -113,6 +112,11 @@ input[type='checkbox'] {
 
 input[type='checkbox']:checked {
     background: #abd;
+}
+
+input[type='text']{
+    height: 15px;
+		width: 200px;
 }
 
 
@@ -345,6 +349,4 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 
 	font-size: 30px;
 	padding-top: 40%;
-
-
 }
