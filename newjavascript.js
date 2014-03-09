@@ -15,6 +15,7 @@ function pageSize() {
 }
 
 
+
 //Function that enables and button when a checkbox is checked
 enableButton = function () {
     if (_('option').checked) {

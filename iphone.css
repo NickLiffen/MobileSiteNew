@@ -119,8 +119,8 @@ input[type='text']{
 		width: 200px;
 }
 
+/*  ----------------- THIS IS WHERE THE MORE COMPLICATED CSS IS  ----------*/
 
-/***FIRST STYLE THE BUTTON***/
 .gobutton{
 
 cursor: pointer; /*forces the cursor to change to a hand when the button is hovered*/
@@ -230,11 +230,6 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
     top:2px;
     left:2px;
 }
-
-
-
-
-
 
 .ratingOne {
     float:left;
