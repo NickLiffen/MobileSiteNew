@@ -48,7 +48,7 @@ nav ul li {
 	float: left;
 }
 nav ul li a {
-	display: block; padding: 5px 4px;
+	display: block; padding: 5px 10px;
 	color: #757575; text-decoration: none;
 }
 .box{
